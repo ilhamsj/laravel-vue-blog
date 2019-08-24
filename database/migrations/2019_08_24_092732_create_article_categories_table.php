@@ -15,6 +15,7 @@ class CreateArticleCategoriesTable extends Migration
     {
         Schema::create('article_categories', function (Blueprint $table) {
             $table->bigIncrements('id');
+            $table->bigInteger('user_id')->unsigned()->index();
             $table->bigInteger('article_id')->unsigned()->index();
             $table->bigInteger('categories_id')->unsigned()->index();
             $table->foreign('article_id')
@@ -25,6 +26,11 @@ class CreateArticleCategoriesTable extends Migration
             $table->foreign('categories_id')
                     ->references('id')
                     ->on('categories')
+                    ->onUpdate('cascade')
+                    ->onDelete('cascade');
+            $table->foreign('user_id')
+                    ->references('id')
+                    ->on('users')
                     ->onUpdate('cascade')
                     ->onDelete('cascade');
             $table->timestamps();
