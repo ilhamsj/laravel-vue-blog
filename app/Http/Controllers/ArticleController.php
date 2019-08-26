@@ -4,12 +4,13 @@ namespace App\Http\Controllers;
 
 use App\Article;
 use Illuminate\Http\Request;
+use Illuminate\Http\Response;
 
 class ArticleController extends Controller
 {
     public function index()
     {
-        return view('blog');
+        return Article::all();
     }
 
     public function create()
@@ -19,26 +20,31 @@ class ArticleController extends Controller
 
     public function store(Request $request)
     {
-        //
+        $article = Article::create($request->all());
+        return $article;
     }
 
-    public function show(Request $id)
+    public function show($id)
+    {
+        return Article::findOrFail($id);
+    }
+
+    public function edit($id)
     {
         //
     }
 
-    public function edit(Request $id)
+    public function update(Request $request, $id)
     {
-        //
+        $article =  Article::findOrFail($id);
+        $article->update($request->all());
+        return $article;
     }
 
-    public function update(Request $request, Request $id)
+    public function destroy($id)
     {
-        //
-    }
-
-    public function destroy(Request $id)
-    {
-        //
+        $article =  Article::findOrFail($id);
+        $article->delete();
+        return 'data berhasil dihapus';
     }
 }

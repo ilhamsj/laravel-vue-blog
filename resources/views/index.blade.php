@@ -10,7 +10,7 @@
 </head>
 <body>
     <div id="app">
-        @yield('content')
+        <router-view name="articleIndex"></router-view>
     </div>
     <script src="{{ asset('js/app.js') }}"></script>
 </body>

@@ -3,9 +3,10 @@
         <div class="row justify-content-center">
             <div class="col-md-8">
                 <div class="card">
-                    <div class="card-header">Example Component</div>
+                    <div class="card-header">Article Index</div>
 
                     <div class="card-body">
+                        <router-link to="/" >Create Article</router-link>
                         I'm an example component.
                     </div>
                 </div>
