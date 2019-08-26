@@ -10,7 +10,7 @@
 </head>
 <body>
     <div id="app">
-        <router-view name="articleIndex"></router-view>
+        <router-view name="home"></router-view>
     </div>
     <script src="{{ asset('js/app.js') }}"></script>
 </body>
