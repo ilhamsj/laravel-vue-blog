@@ -3,10 +3,10 @@
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card card-default">
-                <div class="card-header">List Article</div>
+                <div class="card-header">Homeoage</div>
 
                 <div class="card-body">
-                    I'm the Home Component component.
+                    Halman tidak ditemukan
                 </div>
             </div>
         </div>

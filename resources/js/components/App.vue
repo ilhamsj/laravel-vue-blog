@@ -6,10 +6,13 @@
           <router-link to="/" class="nav-link">Home</router-link>
         </li>
         <li class="nav-item">
-          <router-link to="/create" class="nav-link">Create Post</router-link>
+          <router-link to="/article" class="nav-link">Article</router-link>
         </li>
         <li class="nav-item">
-          <router-link to="/edit" class="nav-link">Edit</router-link>
+          <router-link to="/article/create" class="nav-link">Create Article</router-link>
+        </li>
+        <li class="nav-item">
+          <router-link to="/article/edit" class="nav-link">Edit Article</router-link>
         </li>
       </ul>
     </nav>

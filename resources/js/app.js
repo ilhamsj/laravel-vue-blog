@@ -10,7 +10,8 @@ import 'vue-material/dist/vue-material.css'
 Vue.use(VueMaterial)
 
 import App from './components/App.vue'
-import AppNotFound from './components/404.vue'
+import Home from './components/pages/Home.vue'
+import AppNotFound from './components/pages/404.vue'
 import ArticleIndex from './components/article/Index.vue'
 import ArticleCreate from './components/article/Create.vue'
 import ArticleEdit from './components/article/Edit.vue'
@@ -19,16 +20,21 @@ const routes = [
     {
         name: 'home',
         path: '/',
+        component: Home,
+    },
+    {
+        name: 'article',
+        path: '/article',
         component: ArticleIndex,
     },
     {
-        name: 'create',
-        path: '/create',
+        name: 'article_create',
+        path: '/article/create',
         component: ArticleCreate,
     },
     {
-        name: 'editArticle',
-        path: '/edit',
+        name: 'article_edit',
+        path: '/article/edit',
         component: ArticleEdit,
     },
     {
