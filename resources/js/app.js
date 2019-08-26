@@ -7,9 +7,10 @@ import VueMaterial from 'vue-material'
 import 'vue-material/dist/vue-material.css'
 
 import App from './components/App.vue'
-import ArticleIndex from './components/article/ArticleIndex.vue'
-import ArticleCreate from './components/article/ArticleCreate.vue'
-import ArticleEdit from './components/article/ArticleEdit.vue'
+import AppNotFound from './components/404.vue'
+import ArticleIndex from './components/article/Index.vue'
+import ArticleCreate from './components/article/Create.vue'
+import ArticleEdit from './components/article/Edit.vue'
 
 Vue.use(VueMaterial)
 Vue.use(VueRouter)
@@ -21,7 +22,7 @@ const routes = [
         component: ArticleIndex,
     },
     {
-        name: 'createArticle',
+        name: 'create',
         path: '/create',
         component: ArticleCreate,
     },
@@ -29,6 +30,11 @@ const routes = [
         name: 'editArticle',
         path: '/edit',
         component: ArticleEdit,
+    },
+    {
+        name: '404',
+        path: '/*',
+        component: AppNotFound,
     },
 ]
 
