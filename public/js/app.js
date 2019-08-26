@@ -85868,15 +85868,15 @@ __webpack_require__(/*! ./bootstrap */ "./resources/js/bootstrap.js");
 
 window.Vue = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.common.js");
 
-
-
-
-
-
+Vue.use(vue_router__WEBPACK_IMPORTED_MODULE_0__["default"]);
 
 
 Vue.use(vue_material__WEBPACK_IMPORTED_MODULE_1___default.a);
-Vue.use(vue_router__WEBPACK_IMPORTED_MODULE_0__["default"]);
+
+
+
+
+
 var routes = [{
   name: 'home',
   path: '/',
