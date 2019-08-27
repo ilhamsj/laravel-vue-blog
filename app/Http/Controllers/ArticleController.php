@@ -28,7 +28,8 @@ class ArticleController extends Controller
 
     public function show($id)
     {
-        return Article::findOrFail($id);
+        $article = Article::find($id);
+        return $article;
     }
 
     public function edit($id)
@@ -40,7 +41,7 @@ class ArticleController extends Controller
     {
         $article =  Article::findOrFail($id);
         $article->update($request->all());
-        return $article;
+        return response()->json('data berhasil diupdate');
     }
 
     public function destroy($id)

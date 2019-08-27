@@ -2,38 +2,30 @@
     <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-8">
-            <div class="card card-default">
-                <div class="card-header">
-                    List Article 
-                    <router-link :to="{name: 'article.create'}" class="btn btn-primary btn-sm">Create</router-link>
-                </div>
-
-                <div class="card-body">
-                    <table class="table border">
-                        <thead>
-                            <tr>
-                                <th>Title</th>
-                                <th>Content</th>
-                                <th>Edit</th>
-                                <th>Delte</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr v-for="post in posts" :key="post.id">
-                                <td>{{ post.title }}</td>
-                                <td>{{ post.content }}</td>
-                                <td>
-                                    <router-link :to="{name: 'article_edit', params: { id: post.id }}" class="btn btn-primary btn-sm">Edit</router-link>
-                                </td>
-                                <td>
-                                    <button class="btn btn-danger btn-sm" @click="deletePost(post.id)">Delete</button>
-                                </td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
-                
+            <div class="mb-2">
+                <router-link :to="{name: 'article.create'}" class="btn btn-primary btn-sm">Create</router-link>
             </div>
+            <table class="table border">
+                <thead>
+                    <tr>
+                        <th>Title</th>
+                        <th>Content</th>
+                        <th>
+                            Action
+                        </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr v-for="post in posts" :key="post.id">
+                        <td>{{ post.title }}</td>
+                        <td>{{ post.content }}</td>
+                        <td>
+                            <router-link :to="{name: 'article_edit', params: { id: post.id }}" class="btn btn-primary btn-sm">Edit</router-link>
+                            <button class="btn btn-danger btn-sm" @click="deletePost(post.id)">Delete</button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
         </div>
     </div>
     </div>

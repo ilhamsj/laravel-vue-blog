@@ -17,11 +17,9 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
 
-// Route::resource('article', 'ArticleController');
-
 
 Route::get('/article', 'ArticleController@index');
-Route::get('/article/edit/{id}', 'ArticleController@edit');
+Route::get('/article/{id}', 'ArticleController@show');
 Route::post('/article/update/{id}', 'ArticleController@update');
 
 Route::post('/article/create', 'ArticleController@store');
