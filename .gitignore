@@ -9,4 +9,5 @@ Homestead.json
 Homestead.yaml
 npm-debug.log
 yarn-error.log
-public/resources/views/index.blade.php
+resources/views/index.blade.php
+app/Providers/AppServiceProvider.php
