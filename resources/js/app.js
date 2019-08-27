@@ -9,6 +9,10 @@ import VueMaterial from 'vue-material'
 import 'vue-material/dist/vue-material.css'
 Vue.use(VueMaterial)
 
+import axios from 'axios';
+import VueAxios from 'vue-axios';
+Vue.use(VueAxios, axios);
+
 import App from './components/App.vue'
 import Home from './components/pages/Home.vue'
 import AppNotFound from './components/pages/404.vue'
@@ -33,8 +37,8 @@ const routes = [
         component: ArticleCreate,
     },
     {
-        name: 'article.edit',
-        path: '/article/edit',
+        name: 'article_edit',
+        path: '/article/edit/:id',
         component: ArticleEdit,
     },
     {

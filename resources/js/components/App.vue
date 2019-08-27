@@ -11,12 +11,11 @@
         <li class="nav-item">
           <router-link :to="{ name: 'article.create' }" class="nav-link">Create Article</router-link>
         </li>
-        <li class="nav-item">
-          <router-link :to="{ name: 'article.edit' }" class="nav-link">Edit Article</router-link>
-        </li>
       </ul>
     </nav>
-    <router-view></router-view>
+    <transition name="fade">
+      <router-view></router-view>
+    </transition>  
   </div>
 </template>
 

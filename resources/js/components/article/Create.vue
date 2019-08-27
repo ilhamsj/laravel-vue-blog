@@ -6,8 +6,11 @@
                     <div class="card-header">Article Index</div>
 
                     <div class="card-body">
-                        <router-link to="/" >Create Article</router-link>
-                        I'm an example component.
+                        <form @submit.prevent="addPost" >
+                            <input type="text" v-model="post.title">
+                            <input type="text" v-model="post.content">
+                            <button>Create</button>
+                        </form>
                     </div>
                 </div>
             </div>
@@ -17,8 +20,18 @@
 
 <script>
     export default {
-        mounted() {
-            console.log('Component mounted.')
-        }
+        data() {
+            return {
+                post: {}
+            }
+        },
+        methods: {
+            addPost() {
+                let uri = 'http://blog.test/api/article/create';
+                this.axios.post(uri, this.post).then((response) => {
+                    this.$router.push({name: 'article.index'});
+                });
+            }
+        },
     }
 </script>

@@ -5,12 +5,14 @@ namespace App\Http\Controllers;
 use App\Article;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
+use App\Http\Resources\ArticleCollection;
 
 class ArticleController extends Controller
 {
     public function index()
     {
-        return Article::all();
+        $items = Article::all();
+        return new ArticleCollection($items);
     }
 
     public function create()
@@ -45,6 +47,6 @@ class ArticleController extends Controller
     {
         $article =  Article::findOrFail($id);
         $article->delete();
-        return 'data berhasil dihapus';
+        return response()->json('data berhasil dihapus');
     }
 }
