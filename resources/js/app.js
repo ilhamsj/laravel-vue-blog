@@ -20,6 +20,8 @@ import ArticleIndex from './components/article/Index.vue'
 import ArticleCreate from './components/article/Create.vue'
 import ArticleEdit from './components/article/Edit.vue'
 
+import EditorIndex from './components/editor/Index.vue'
+
 const routes = [
     {
         name: 'home',
@@ -40,6 +42,11 @@ const routes = [
         name: 'article_edit',
         path: '/article/edit/:id',
         component: ArticleEdit,
+    },
+    {
+        name: 'editor',
+        path: '/editor',
+        component: EditorIndex,
     },
     {
         name: '404',

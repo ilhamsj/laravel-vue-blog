@@ -3,16 +3,14 @@
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="mb-2">
-                <router-link :to="{name: 'article.create'}" class="btn btn-primary btn-sm">Create</router-link>
+                <router-link :to="{name: 'article.create'}" class="md-raised">Create</router-link>
             </div>
             <table class="table border">
                 <thead>
                     <tr>
                         <th>Title</th>
                         <th>Content</th>
-                        <th>
-                            Action
-                        </th>
+                        <th>Action</th>
                     </tr>
                 </thead>
                 <tbody>

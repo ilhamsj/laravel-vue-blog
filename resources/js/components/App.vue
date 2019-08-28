@@ -11,6 +11,9 @@
         <li class="nav-item">
           <router-link :to="{ name: 'article.create' }" class="nav-link">Create Article</router-link>
         </li>
+        <li class="nav-item">
+          <router-link :to="{ name: 'editor' }" class="nav-link">Editor</router-link>
+        </li>
       </ul>
     </nav>
     <transition name="fade">
