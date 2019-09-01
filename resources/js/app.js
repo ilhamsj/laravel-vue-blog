@@ -40,7 +40,7 @@ const routes = [
     },
     {
         name: 'article_edit',
-        path: '/article/edit/:id',
+        path: '/article/:id/edit',
         component: ArticleEdit,
     },
     {

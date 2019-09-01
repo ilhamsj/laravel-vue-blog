@@ -38,7 +38,7 @@
         }
       },
       created() {
-        let uri = `http://blog.test/api/article/${this.$route.params.id}`;
+        let uri = `http://blog.test/api/artikel/${this.$route.params.id}`;
         this.axios.get(uri).then((response) => {
             this.post = response.data;
         });

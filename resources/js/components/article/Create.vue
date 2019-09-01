@@ -32,7 +32,7 @@
         },
         methods: {
             addPost() {
-                let uri = 'http://blog.test/api/article/create';
+                let uri = 'http://blog.test/api/artikel';
                 this.axios.post(uri, this.post).then((response) => {
                     this.$router.push({name: 'article.index'});
                 });

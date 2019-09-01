@@ -1,13 +1,12 @@
 <template>
     <div class="container">
     <div class="row justify-content-center">
-        <div class="col-md-8">
-            <div class="mb-2">
-                <router-link :to="{name: 'article.create'}" class="md-raised">Create</router-link>
-            </div>
-            <table class="table border">
+        <div class="col-md-10">
+            <div class="table-responsive-sm">
+            <table class="table table-bordered  ">
                 <thead>
                     <tr>
+                        <th>ID</th>
                         <th>Title</th>
                         <th>Content</th>
                         <th>Action</th>
@@ -15,6 +14,7 @@
                 </thead>
                 <tbody>
                     <tr v-for="post in posts" :key="post.id">
+                        <td>{{ post.id }}</td>
                         <td>{{ post.title }}</td>
                         <td>{{ post.content }}</td>
                         <td>
@@ -24,6 +24,7 @@
                     </tr>
                 </tbody>
             </table>
+            </div>
         </div>
     </div>
     </div>
@@ -37,17 +38,18 @@
             }
         },
         created() {
-            let uri = 'http://blog.test/api/article';
+            let uri = 'http://blog.test/api/artikel';
             this.axios.get(uri).then(response => {
                 this.posts = response.data.data;
             });
         },
         methods: {
             deletePost(id) {
-                let uri = `http://blog.test/api/article/delete/${id}`;
-                this.axios.delete(uri).then(response => {
-                    this.posts.splice(this.posts.indexOf(id), 1);
-                });
+                let uri = `http://blog.test/api/artikel/${id}`;
+                this.axios.delete(uri)
+                    .then(response => {
+                        this.posts.splice(this.posts.indexOf(id), 1);
+                    });
             }
         },
     }

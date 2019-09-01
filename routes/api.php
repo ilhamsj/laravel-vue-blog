@@ -18,12 +18,8 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 });
 
 
-Route::get('/article', 'ArticleController@index');
-Route::get('/article/{id}', 'ArticleController@show');
 Route::post('/article/update/{id}', 'ArticleController@update');
-
-Route::post('/article/create', 'ArticleController@store');
-Route::delete('/article/delete/{id}', 'ArticleController@destroy');
 
 Route::resource('kategori', 'CategoryController');
 Route::resource('post', 'ArticleCategoryController');
+Route::resource('artikel', 'ArticleController');
