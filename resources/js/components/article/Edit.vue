@@ -6,7 +6,9 @@
                     <router-link :to="{name: 'article.index'}">Back</router-link>
                 </div>
                 <div class="card">
-                    <div class="card-header">Article Index</div>
+                    <div class="card-header">
+                        Article Index
+                    </div>
 
                     <div class="card-body">
                         <form @submit.prevent="updatePost">
@@ -45,11 +47,12 @@
       },
         methods: {
             updatePost() {
-            let uri = `http://blog.test/api/article/update/${this.$route.params.id}`;
-            this.axios.post(uri, this.post).then((response) => {
-                this.$router.push({name: 'article.index'});
-            });
+                let uri = `http://blog.test/api/article/update/${this.$route.params.id}`;
+                this.axios.post(uri, this.post)
+                .then((response) => {
+                    this.$router.push({name: 'article.index'});
+                });
+            }
         }
-      }
     }
 </script>
