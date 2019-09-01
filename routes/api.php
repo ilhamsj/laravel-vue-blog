@@ -17,7 +17,6 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
 
-
 Route::post('/article/update/{id}', 'ArticleController@update');
 
 Route::resource('kategori', 'CategoryController');
