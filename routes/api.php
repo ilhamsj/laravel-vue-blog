@@ -26,3 +26,4 @@ Route::post('/article/create', 'ArticleController@store');
 Route::delete('/article/delete/{id}', 'ArticleController@destroy');
 
 Route::resource('kategori', 'CategoryController');
+Route::resource('post', 'ArticleCategoryController');

@@ -4,12 +4,15 @@ namespace App\Http\Controllers;
 
 use App\ArticleCategory;
 use Illuminate\Http\Request;
+use App\Http\Resources\ArticleCategoryCollection;
+
 
 class ArticleCategoryController extends Controller
 {
     public function index()
     {
-        //
+        $items = ArticleCategory::paginate();
+        return new ArticleCategoryCollection($items);
     }
 
     public function create()
