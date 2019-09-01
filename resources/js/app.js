@@ -30,17 +30,17 @@ const routes = [
     },
     {
         name: 'article.index',
-        path: '/article',
+        path: '/artikel',
         component: ArticleIndex,
     },
     {
         name: 'article.create',
-        path: '/article/create',
+        path: '/artikel/create',
         component: ArticleCreate,
     },
     {
         name: 'article_edit',
-        path: '/article/:id/edit',
+        path: '/artikel/:id/edit',
         component: ArticleEdit,
     },
     {
