@@ -42,13 +42,13 @@
         },
         methods: {
             fetchArticles() {
-                let apiUrl = 'http://blog.test/api/artikel';
+                let apiUrl = 'api/artikel';
                 this.axios.get(apiUrl).then(response => {
                     this.posts = response.data.data;
                 });
             },
             deletePost(id) {
-                let apiUrl = `http://blog.test/api/artikel/${id}`;
+                let apiUrl = `api/artikel/${id}`;
                 this.axios.delete(apiUrl)
                 .then(response => {
                     this.posts.splice(this.posts.indexOf(id), 1);
